@@ -1,0 +1,6 @@
+{
+    "title": "My Blogs",
+    "uri": "/projects/{projectId}/myblogs",
+    "extends": "project/_project",
+    "template": "my-blogs-template"
+}

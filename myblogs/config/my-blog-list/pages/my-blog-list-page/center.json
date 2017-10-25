@@ -1,0 +1,8 @@
+{
+    "type": "my-blog-list",
+    "config": {
+        "chrome": {
+            "title": "My Blogs List"
+        }
+    }
+}
