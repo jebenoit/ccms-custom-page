@@ -38,10 +38,11 @@ define(function(require, exports, module) {
             this.base(el, model, function() {
 
                 // query for blog post instances
-                branch.queryNodes({ "_type": "mmcx:blogpost" }).then(function() {
+                branch.queryNodes({ "_type": "mmcx:blogpost", "blogState": {"$in": ["In Progress", "New"]} }, {"limit": 50}).then(function() {
 
                     // store blog post node on the model (as a list) and then fire callback
                     model.nodes = this.asArray();
+                    model.harry = "hello";
 
                     // add "imageUrl" attribute
                     // add "browseUrl" attribute
@@ -51,7 +52,11 @@ define(function(require, exports, module) {
 
                         node.imageUrl256 = "/preview/repository/" + node.getRepositoryId() + "/branch/" + node.getBranchId() + "/node/" + node.getId() + "/default?size=256&name=preview256&force=true";
                         node.imageUrl128 = "/preview/repository/" + node.getRepositoryId() + "/branch/" + node.getBranchId() + "/node/" + node.getId() + "/default?size=128&name=preview128&force=true";
-                        node.browseUrl = "/#/projects/" + project._doc + "/documents/" + node._doc;
+                        node.browseUrl = "/#/projects/" + project._doc + "/documents/" + node._doc + "/properties/";
+
+                        console.log(node.author.title);
+                        console.log(node.headline);
+                        console.log(node.blogState);
                     }
 
                     callback();
@@ -83,27 +88,27 @@ define(function(require, exports, module) {
          * @param originalContext the dispatch context used to inject
          * @param callback
          */
-        afterSwap: function(el, model, originalContext, callback)
-        {
-            this.base(el, model, originalContext, function() {
+        // afterSwap: function(el, model, originalContext, callback)
+        // {
+        //     this.base(el, model, originalContext, function() {
 
-                // find all .media-popups and attach to a lightbox
-                $(el).find(".media-popup").click(function(e) {
+        //         // find all .media-popups and attach to a lightbox
+        //         $(el).find(".media-popup").click(function(e) {
 
-                    e.preventDefault();
+        //             e.preventDefault();
 
-                    var nodeIndex = $(this).attr("data-media-index");
-                    var node = model.nodes[nodeIndex];
+        //             var nodeIndex = $(this).attr("data-media-index");
+        //             var node = model.nodes[nodeIndex];
 
-                    UI.showPopupModal({
-                        "title": "Viewing: " + node.title,
-                        "body": "<div style='text-align:center'><img src='" + node._doc + "'></div>"
-                    });
-                });
+        //             UI.showPopupModal({
+        //                 "title": "Viewing: " + node.title,
+        //                 "body": "<div style='text-align:center'><img src='" + node._doc + "'></div>"
+        //             });
+        //         });
 
-                callback();
-            });
-        }
+        //         callback();
+        //     });
+        // }
 
     }));
 
