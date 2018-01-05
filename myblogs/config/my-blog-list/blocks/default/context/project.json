@@ -5,7 +5,7 @@
             "items": [{
                 "key": "myblogs/header",
                 "title": "Blogs",
-                "order": 10,
+                "order": 10000,
                 "header": true,
                 "iconClass": "fa fa-dashboard",
                 "allowAuthority": ["manager"],
