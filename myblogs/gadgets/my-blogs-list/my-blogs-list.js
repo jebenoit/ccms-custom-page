@@ -88,27 +88,27 @@ define(function(require, exports, module) {
          * @param originalContext the dispatch context used to inject
          * @param callback
          */
-        // afterSwap: function(el, model, originalContext, callback)
-        // {
-        //     this.base(el, model, originalContext, function() {
+        afterSwap: function(el, model, originalContext, callback)
+        {
+            this.base(el, model, originalContext, function() {
 
-        //         // find all .media-popups and attach to a lightbox
-        //         $(el).find(".media-popup").click(function(e) {
+                // find all .media-popups and attach to a lightbox
+                $(el).find(".media-popup").click(function(e) {
 
-        //             e.preventDefault();
+                    e.preventDefault();
 
-        //             var nodeIndex = $(this).attr("data-media-index");
-        //             var node = model.nodes[nodeIndex];
+                    var nodeIndex = $(this).attr("data-media-index");
+                    var node = model.nodes[nodeIndex];
 
-        //             UI.showPopupModal({
-        //                 "title": "Viewing: " + node.title,
-        //                 "body": "<div style='text-align:center'><img src='" + node._doc + "'></div>"
-        //             });
-        //         });
+                    UI.showPopupModal({
+                        "title": "Viewing: " + node.title,
+                        "body": "<div style='text-align:center'><img src='" + node._doc + "'></div>"
+                    });
+                });
 
-        //         callback();
-        //     });
-        // }
+                callback();
+            });
+        }
 
     }));
 
