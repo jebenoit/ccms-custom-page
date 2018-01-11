@@ -52,7 +52,10 @@ define(function(require, exports, module) {
 
                         node.imageUrl256 = "/preview/repository/" + node.getRepositoryId() + "/branch/" + node.getBranchId() + "/node/" + node.getId() + "/default?size=256&name=preview256&force=true";
                         node.imageUrl128 = "/preview/repository/" + node.getRepositoryId() + "/branch/" + node.getBranchId() + "/node/" + node.getId() + "/default?size=128&name=preview128&force=true";
-                        node.browseUrl = "/#/projects/" + project._doc + "/documents/" + node._doc + "/properties/";
+                        node.browseUrl = "/#/projects/" + project._doc + "/documents/" + node._doc;
+                        node._system = node.getSystemMetadata()
+
+
 
                         console.log(node.author.title);
                         console.log(node.headline);
