@@ -38,7 +38,7 @@ define(function(require, exports, module) {
             this.base(el, model, function() {
 
                 // query for blog post instances
-                branch.queryNodes({ "_type": "mmcx:blogpost", "blogState": {"$in": ["In Progress", "New"]} }, {"limit": 50}).then(function() {
+                branch.queryNodes({ "_type": "mmcx:blogpost", "blogState": {"$in": ["In Progress", "New", "Done", "Hold"]}}, {"limit": 50}).then(function() {
 
                     // store blog post node on the model (as a list) and then fire callback
                     model.nodes = this.asArray();
