@@ -77,7 +77,7 @@ define(function(require, exports, module) {
                         node.browseUrl = "/#/projects/" + project._doc + "/documents/" + node._doc;
                         node._system = node.getSystemMetadata()
 
-
+                        node.state = node.state||"unpublished"
 
                         // console.log(node.author.title);
                         // console.log(node.headline);
