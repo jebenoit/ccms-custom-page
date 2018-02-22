@@ -38,7 +38,29 @@ define(function(require, exports, module) {
             this.base(el, model, function() {
 
                 // query for blog post instances
-                branch.queryNodes({ "_type": "mmcx:blogpost", "blogState": {"$in": ["In Progress", "New", "Done", "Hold", "None"]}}, {"limit": 50}).then(function() {
+                branch.queryNodes({
+                    "_type": "mmcx:blogpost",
+                    "$or": [
+                        {
+                            "blogState": {
+                                "$not": {
+                                    "$exists": true
+                                }
+                            }
+                        },
+                        {
+                            "blogState": {
+                                "$in": [
+                                    "In Progress",
+                                    "New",
+                                    "Done",
+                                    "Hold",
+                                    "None"
+                                ]
+                            }
+                        }
+                    ]
+                 }, {"limit": 50}).then(function() {
 
                     // store blog post node on the model (as a list) and then fire callback
                     model.nodes = this.asArray();
@@ -57,9 +79,9 @@ define(function(require, exports, module) {
 
 
 
-                        console.log(node.author.title);
-                        console.log(node.headline);
-                        console.log(node.blogState);
+                        // console.log(node.author.title);
+                        // console.log(node.headline);
+                        // console.log(node.blogState);
                     }
 
                     callback();
