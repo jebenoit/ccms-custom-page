@@ -9,7 +9,6 @@
       <th class="sortable" onclick="sortTable(0)">Title</th>
       <th class="sortable" onclick="sortTable(1)">Author</th>
       <th class="sortable" onclick="sortTable(2)">Blog Category</th>
-      <th class="sortable" onclick="sortTable(3)">Blog Workflow State</th>
       <th class="sortable" onclick="sortTable(4)">Published State</th>
       <th class="sortable" onclick="sortTable(5)">Modified On</th>
       <th class="sortable" onclick="sortTable(6)">Modified By</th>
@@ -20,7 +19,6 @@
             <td><a href="{{browseUrl}}/properties">{{title}}</a></td>
             <td>{{author.title}}</td>
             <td>{{#each blogCategory}}{{title}}{{/each}}</td>
-            <td>{{blogState}}</td>
             <td>{{state}}</td>
             <td>{{_system.modified_on.timestamp}}</td>
             <td>{{_system.modified_by}}</td>
