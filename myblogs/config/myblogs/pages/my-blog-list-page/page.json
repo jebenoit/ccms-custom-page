@@ -1,5 +1,5 @@
 {
-    "title": "Blog Articles",
+    "title": "Blog Dashboard",
     "uri": "/projects/{projectId}/myblogs",
     "extends": "project/_project",
     "template": "my-blogs-list-template"
