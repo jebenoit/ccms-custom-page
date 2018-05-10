@@ -14,7 +14,7 @@
                 "rejectPermission": [],
                 "items": [{
                     "key": "myblogs/my-blogs-list",
-                    "title": "My Blogs",
+                    "title": "Blog Dashboard",
                     "uri": "#/projects/{projectId}/myblogs",
                     "iconClass": "fa fa-pencil",
                     "allowPermission": [
