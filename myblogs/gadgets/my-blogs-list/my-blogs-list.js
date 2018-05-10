@@ -39,7 +39,7 @@ define(function(require, exports, module) {
 
                 // query for blog post instances
                 branch.queryNodes({
-                    "_type": "mmcx:blogpost", "blogCategory.title": {"$in": ["test", "test2", "Assembly", "Staged"]}}, {"limit": -1}).then(function() {
+                    "_type": "mmcx:blogpost", "blogCategory.title": {"$in": ["test", "test2", "parked", "Assembly", "Staged"]}}, {"limit": -1}).then(function() {
 
                     // store blog post node on the model (as a list) and then fire callback
                     model.nodes = this.asArray();
