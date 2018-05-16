@@ -1,7 +1,7 @@
 {
     "evaluator": "context-project",
     "config": {
-        "context": {
+        "manage-context": {
             "items": [{
                 "key": "myblogs/header",
                 "title": "Blogs",
