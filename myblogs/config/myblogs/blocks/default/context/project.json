@@ -8,8 +8,8 @@
                 "order": 10000,
                 "header": true,
                 "iconClass": "fa fa-dashboard",
-                "allowAuthority": [],
-                "allowPermission": [],
+                "allowAuthority": ["manager"],
+                "allowPermission": ["read"],
                 "rejectAuthority": [],
                 "rejectPermission": [],
                 "items": [{
@@ -18,7 +18,7 @@
                     "uri": "#/projects/{projectId}/myblogs",
                     "iconClass": "fa fa-pencil",
                     "allowPermission": [
-                      
+                      "manager"
                     ]
                 }]
             }]
