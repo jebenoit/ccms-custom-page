@@ -8,10 +8,6 @@
                 "order": 10000,
                 "header": true,
                 "iconClass": "fa fa-dashboard",
-                "allowAuthority": ["manager"],
-                "allowPermission": ["read"],
-                "rejectAuthority": [],
-                "rejectPermission": [],
                 "items": [{
                     "key": "myblogs/my-blogs-list",
                     "title": "Blog Dashboard",
