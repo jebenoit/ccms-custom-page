@@ -1,15 +1,15 @@
 {
     "evaluator": "context-project",
     "config": {
-        "manage-context": {
+        "context": {
             "items": [{
                 "key": "myblogs/header",
                 "title": "Blogs",
                 "order": 10000,
                 "header": true,
                 "iconClass": "fa fa-dashboard",
-                "allowAuthority": ["manager"],
-                "allowPermission": ["read"],
+                "allowAuthority": [],
+                "allowPermission": [],
                 "rejectAuthority": [],
                 "rejectPermission": [],
                 "items": [{
@@ -18,7 +18,7 @@
                     "uri": "#/projects/{projectId}/myblogs",
                     "iconClass": "fa fa-pencil",
                     "allowPermission": [
-                        "manager"
+                      
                     ]
                 }]
             }]
