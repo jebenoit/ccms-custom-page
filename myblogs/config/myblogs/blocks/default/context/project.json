@@ -18,7 +18,7 @@
                     "uri": "#/projects/{projectId}/myblogs",
                     "iconClass": "fa fa-pencil",
                     "allowPermission": [
-                      "manager"
+                      "read"
                     ]
                 }]
             }]
