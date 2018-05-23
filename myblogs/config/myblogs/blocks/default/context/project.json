@@ -10,7 +10,7 @@
                 "iconClass": "fa fa-dashboard",
                 "items": [{
                     "key": "myblogs/my-blogs-list",
-                    "title": "Blog Dashboard",
+                    "title": "My Blog Dashboard",
                     "uri": "#/projects/{projectId}/myblogs",
                     "iconClass": "fa fa-pencil",
                     "allowPermission": [
